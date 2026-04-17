@@ -1,6 +1,7 @@
 import { test } from '@playwright/test';
 import { ProductPage } from '../Pages/ProductPage';
 
+
 test('Verify add and remove from cart functionality', async ({ page }) => {
 
     const productPage = new ProductPage(page);
@@ -14,8 +15,10 @@ test('Verify add and remove from cart functionality', async ({ page }) => {
     await productPage.openCartPreview();
 
     await productPage.verifyProductInCart(productName);
+    await page.waitForTimeout(3000)
 
     await productPage.openCart();
+    
 
     await productPage.removeProduct();
 

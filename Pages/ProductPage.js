@@ -31,13 +31,14 @@ export class ProductPage {
     }
 
     async openCart() {
+         await this.cartIcon.click()
         await this.cartButton.click();
     }
 
     async verifyProductInCart(productName) {
         await expect(
             this.page.locator(`text=${productName.trim()}`)
-        ).toBeVisible();
+        ).toBeVisible({timeout:3000});
     }
 
     async removeProduct() {

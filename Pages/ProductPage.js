@@ -13,7 +13,7 @@ export class ProductPage {
     }
 
     async navigate() {
-        await this.page.goto('https://sauce-demo.myshopify.com/');
+        await this.page.goto('/');
     }
 
     async selectProduct() {
